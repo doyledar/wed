@@ -13,7 +13,7 @@ Variables disponibles $posts (tableau de tableaux indexés)
       <article class="blog_item">
           <div class="blog_item_img">
               <img class="card-img rounded-0" src="assets/img/blog/<?php echo $post['image']; ?>" alt="">
-              <a href="?postID=<?php echo $post['id']; ?>" class="blog_item_date">
+              <a href="?postID=<?php echo $post['id']; ?>-detail-du-post" class="blog_item_date">
                   <h3><?php echo date('d', $date); ?></h3>
                   <p><?php echo date('F', $date); ?></p>
               </a>
