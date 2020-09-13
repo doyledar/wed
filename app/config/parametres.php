@@ -9,6 +9,7 @@ Paramètres de l'application
 $title   = "";
 $content = "";
 
+
 // textes
 define ('TITRE_POSTS_INDEX', "Liste des posts");
 

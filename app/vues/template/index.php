@@ -4,7 +4,10 @@
 Template principal
 -------------------------------------------------------------*/
  ?>
-
+<?php
+  //echo $_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'];
+  //phpinfo();
+?>
  <!doctype html>
 <html class="no-js" lang="zxx">
     <?php include '../app/vues/template/partials/_head.php'; ?>
