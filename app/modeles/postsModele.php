@@ -29,7 +29,7 @@ function findAll(\PDO $connexion) : array{
  * @return array             [description]
  */
 function findOneById(\PDO $connexion, $id) : array{
-  $sql = "SELECT *
+  $sql = "SELECT *, p.id
           FROM posts p
             JOIN authors a
               ON a.id = p.author_id

@@ -4,8 +4,19 @@
 Dispatcher central
 --------------------------------------------*/
 use \App\Controleurs\Posts;
+use \App\Controleurs\Categories;
 
-if(isset($_GET['postID'])):
+if(isset($_GET['categorieID'])):
+  
+  // ROUTE DU DETAIL D'UNE CATEGORIE
+  // PATTERN : ?categorieID=xxx
+  // CTRL :    categoriesControleur
+  // ACTION:   show
+  include_once '../app/controleurs/categoriesControleur.php';
+  \App\Controleurs\Categories\showAction($connexion, $_GET['categorieID']);
+
+
+elseif(isset($_GET['postID'])):
   // ROUTE DU DETAIL D'UN POST
   // PATTERN : ?postID=xxx
   // CTRL :    postsControleur
