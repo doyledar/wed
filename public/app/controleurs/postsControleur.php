@@ -45,5 +45,4 @@ function searchAction(\PDO $connexion, $search){
   ob_start();
     include '../app/vues/posts/search.php';
   $content = ob_get_clean();
-
 }

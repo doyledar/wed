@@ -19,12 +19,27 @@ RewriteEngine on
 # RewriteRule ^categories\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?categorieID=$1 [L]
 RewriteRule ^contact.html$ index.php?contact.html [L]
 
+# ROUTES DES USERS
+# ------------------------------------------------------------
+  # FORMULAIRE DE LOGIN
+  # PATTERN : users/login/form
+  # URL : index.php?users=login/loginForm
+  RewriteRule ^users\/login\/form$ index.php?users=loginForm [L]
+
+  # CONNEXION
+  # PATTERN : users/login/submit
+  # URL : index.php?users=login
+  RewriteRule ^users\/login\/submit$ index.php?users=loginForm [L]
+
+# ROUTES DES CATEGORIES
+# ------------------------------------------------------------
+
 # ROUTE DU DETAIL D'UNE CATEGORIE
 # PATTERN : categories/{id}/{slug}
 # URL : index.php?categoriesID=xxx
 # URL NewMethod : index.php?categories=show&id=x
-# RewriteRule ^categories\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?categorieID=$1 [L]
-RewriteRule ^categories\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?categories=show&id=$1 [L]
+# RewriteRule ^categories\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?categorieId=$1 [L]
+  RewriteRule ^categories\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?categories=show&id=$1 [L]
 
 # ROUTES DES POSTS
 # ------------------------------------------------------------
@@ -36,12 +51,11 @@ RewriteRule ^categories\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?ca
 RewriteRule ^posts\/search$ index.php?posts=search; [L]
 
 
-# ROUTE DU DETAIL D'UN POST
-# PATTERN : posts/{id}/{slug}
-# URL : index.php?posts=show&id=x
-# on a une variable GET qui s'appelle posts
-RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?posts=show&id=$1 [L]
-
+# DETAILS D'UN POST
+# PATTERN:
+# FROM post/id/slug
+# TO index.php?post=show&id=x
+  RewriteRule ^post\/([1-9][0-9]*)\/([a-z0-9]+[a-z0-9\-]*[a-z0-9])$ index.php?post=show&id=$1 [L]
 
 # --------------------------------------------------
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
